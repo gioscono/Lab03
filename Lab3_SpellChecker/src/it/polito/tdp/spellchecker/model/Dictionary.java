@@ -34,8 +34,27 @@ public class Dictionary {
 		List<RichWord> listaParole = new LinkedList<RichWord>();
 		for(String s : inputTextList){
 			RichWord r = new RichWord(s);
-			if(dizionario.contains(s)){
-				r.setCorretta();
+			
+			int centro = dizionario.size()/2;
+			int start=0;
+			int end = dizionario.size();
+			
+			while(start+1 < end){
+				if(r.getParola().compareTo(dizionario.get(centro))>0){
+					start = centro;
+					centro = (centro+end)/2;					
+				}
+				else{
+					if(r.getParola().compareTo(dizionario.get(centro))<0){
+						end = centro;
+						centro = (centro+start)/2;
+					}
+					else{
+						r.setCorretta();
+						break;
+					}
+				}
+				
 			}
 			listaParole.add(r);
 		}

@@ -82,7 +82,7 @@ public class SpellCheckerController {
     	}
     	long t2 = System.nanoTime();
     	
-    	labelTime.setText("Spell check completed in "+(t2-t1)+"nanoseconds");
+    	labelTime.setText("Spell check completed in "+(t2-t1)/1e9+" seconds");
     	if(numeroSbagliate==1)
     		labelError.setText("The text contains "+numeroSbagliate+"error");
     	if(numeroSbagliate!=1)
