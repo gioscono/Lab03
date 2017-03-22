@@ -26,6 +26,7 @@ public class Dictionary {
 		} catch	(IOException e){   
 			System. out .println("Errore nella lettura del file");  
 			} 
+	Collections.sort(dizionario);
 	}
 
 	public List<RichWord> spellCheckText(List<String> inputTextList) {
